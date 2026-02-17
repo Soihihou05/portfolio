@@ -3,77 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Nourddine Abasse Soihihou</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Nourddine Abasse | Security Portfolio</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --green: #00ff41;
+            --dim-green: #003b00;
+            --white: #e0e0e0;
+            --font: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--green);
+            font-family: var(--font);
+            margin: 0; padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Scanline effect */
+        body::before {
+            content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 100; pointer-events: none; background-size: 100% 2px, 3px 100%;
+        }
+
+        .container { max-width: 1000px; margin: auto; border: 1px solid var(--dim-green); padding: 30px; box-shadow: 0 0 20px rgba(0, 255, 65, 0.1); }
+        
+        .header-box { border-bottom: 1px double var(--dim-green); margin-bottom: 30px; padding-bottom: 20px; }
+        .prompt { color: var(--white); }
+        .cursor { display: inline-block; width: 8px; height: 15px; background: var(--green); animation: blink 0.8s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        h2 { background: var(--dim-green); color: var(--white); padding: 5px 15px; display: inline-block; font-size: 1.2rem; text-transform: uppercase; }
+        
+        .project { margin-bottom: 40px; border-left: 2px solid var(--dim-green); padding-left: 20px; }
+        .project-title { color: var(--white); font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
+        .tech-stack { color: #008f11; font-size: 0.9rem; margin-bottom: 10px; }
+        .details { color: #888; font-size: 0.95rem; line-height: 1.6; }
+        
+        ul { list-style: none; padding: 0; }
+        li::before { content: " [>] "; color: var(--white); }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+
+        a { color: var(--white); text-decoration: none; border-bottom: 1px solid var(--dim-green); transition: 0.3s; }
+        a:hover { background: var(--green); color: #000; }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="competences.html">Compétences</a></li>
-                <li><a href="projets.html">Projets</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <h1>Bienvenue sur mon Portfolio</h1>
-        <p>Étudiant en ingénierie en Sécurité IT | Passionné de cybersécurité et développement web</p>
-    </header>
-    
-    <section id="presentation">
-        <h2>À propos de moi</h2>
-        <p>Je suis Nourddine Abasse Soihihou, étudiant en ingénierie de la sécurité IT à la FSTG Marrakech. J'aime relever des défis technologiques, apprendre continuellement et contribuer à la sécurité des systèmes d'information.</p>
-    </section>
+    <div class="container">
+        <div class="header-box">
+            <pre style="font-size: 10px; overflow-x: auto;">
+ ██████╗  ██████╗ ██╗██╗  ██╗██╗██╗  ██╗ ██████╗ ██╗   ██╗
+██╔════╝ ██╔═══██╗██║██║  ██║██║██║  ██║██╔═══██╗██║   ██║
+███████╗ ██║   ██║██║███████║██║███████║██║   ██║██║   ██║
+╚════██║ ██║   ██║██║██╔══██║██║██╔══██║██║   ██║██║   ██║
+███████║ ╚██████╔╝██║██║  ██║██║██║  ██║╚██████╔╝╚██████╔╝
+╚══════╝  ╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ </pre>
+            <p><span class="prompt">guest@soihihou:~$</span> whoami</p>
+            <p><strong>SOIHIHOU NOURDDINE ABASSE</strong> | Élève Ingénieur en Sécurité IT</p>
+            <p>Localisation: Marrakech, Maroc | Spécialité: Cybersécurité & Dev Full-stack</p>
+        </div>
 
-    <section id="formation">
-        <h2>Formation</h2>
-        <ul>
-            <li><strong>Ingénierie en Sécurité IT</strong> — FSTG, Marrakech (2024 - 2027)</li>
-            <li><strong>Baccalauréat</strong> — GSDP, Comores (2020 - 2021)</li>
-        </ul>
-    </section>
-
-    <section id="competences">
-        <h2>Compétences</h2>
-        <ul>
-            <li>Programmation en C</li>
-            <li>Java POO</li>
-            <li>Python</li>
-            <li>HTML, CSS & JavaScript</li>
-            <li>CMS : WordPress</li>
-            <li>PHP</li>
-            <li>Design : Canva, Figma</li>
-            <li>Analyse de données</li>
-            <li>Détection des menaces</li>
-        </ul>
-    </section>
-
-    <section id="projets">
-        <h2>Projets</h2>
-        <ul>
-            <li><strong>Application de gestion des menaces</strong> : Développement d'une application pour détecter et analyser des cyberattaques.</li>
-            <li><strong>Portfolio personnel</strong> : Création d'un site web pour présenter mon parcours et mes compétences.</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <form action="#" method="post">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required>
+        <section>
+            <h2>01. Dossiers Projets Détaillés</h2>
             
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Nourddine Abasse Soihihou | Portfolio personnel</p>
-    </footer>
+            <div class="project">
+                <div class="project-title">👁️ RetinaScan - Diagnostic Médical Assisté par IA</div>
+                <div class="tech-stack">Stack: Laravel, Python, OpenCV, MySQL</div>
+                <div class="details">
+                    Développement d'une solution innovante pour la détection de la rétinopathie diabétique. 
+                    - Architecture MVC structurée pour une gestion robuste des données patients.
+                    - Pont technologique (Bridge) entre Laravel et des scripts Python pour l'analyse d'images via IA.
+                    - Dashboard interactif permettant la visualisation des résultats et le suivi historique des diagnostics.
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-title">🔐 Crypto-Engine - Signature Numérique ECDSA</div>
+                <div class="tech-stack">Stack: Python, Mathématiques Cryptographiques</div>
+                <div class="details">
+                    Mise en œuvre d'un système de signature basé sur les courbes elliptiques (ECDSA).
+                    - Étude théorique approfondie des structures algébriques des courbes.
+                    - Implémentation de l'algorithme sur des courbes spécifiques pour garantir l'intégrité et l'authenticité des données.
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-title">🖐️ GestureControl - Reconnaissance Gestuelle</div>
+                <div class="tech-stack">Stack: Python, OpenCV, Mediapipe, Pycaw</div>
+                <div class="details">
+                    Système de contrôle du volume système par vision par ordinateur.
+                    - Traitement d'image en temps réel via webcam pour détecter les points clés de la main.
+                    - Algorithme de calcul de distance entre l'index et le pouce pour ajuster le volume audio instantanément.
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-title">🛒 E-Commerce  - API WhatsApp</div>
+                <div class="tech-stack">Stack: Laravel, JavaScript, API WhatsApp</div>
+                <div class="details">
+                    Plateforme de vente en ligne optimisée pour le commerce de proximité.
+                    - Tunnel de commande direct vers WhatsApp pour faciliter la communication client-vendeur.
+                    - Interface d'administration complète pour la gestion des stocks et du catalogue produits.
+                </div>
+            </div>
+        </section>
+
+        <div class="grid">
+            <section>
+                <h2>02. Compétences Système</h2>
+                <ul>
+                    <li>Offensive Sec: Pentesting, Kali Linux, Nmap, Metasploit,Burpsuite, ...etc</li>
+                    <li>Defense: RGPD Compliance, Data Privacy, 802.11 Security</li>
+                    <li>Dev: Laravel (Expert), Python, React Js, Java, C</li>
+                    <li>Admin: Ubuntu Server, MySQL, Git/GitHub</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>03. Médailles CTF</h2>
+                <ul>
+                    <li><strong>5ème Place</strong> - CTF GCDSTE x JOBINTECH</li>
+                    <li><strong>Finaliste</strong> - AUSIM CyberDrill Region V2</li>
+                    <li><strong>34ème Place</strong> - AKASEC CTF</li>
+                    <li><strong>TryHackMe</strong> - Labs Anonforce, h4cked, mkingdom</li>
+                </ul>
+            </section>
+        </div>
+
+        <section style="margin-top: 30px;">
+            <h2>04. Contact / Liaisons</h2>
+            <p><span class="prompt">guest@soihihou:~$</span> tail -f contact.txt</p>
+            <p>Email: <a href="mailto:n.soihihou2004@uca.ac.ma">n.soihihou2004@uca.ac.ma</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/nourddine-abasse-soihihou" target="_blank">nourddine-abasse-soihihou</a></p>
+            <p>GitHub: <a href="https://github.com/Soihihou05" target="_blank">github.com/Soihihou05</a></p>
+        </section>
+
+        <p style="text-align: center; margin-top: 50px; opacity: 0.5;">
+            -- SYSTEM STATUS: SECURE -- <span class="cursor"></span>
+        </p>
+    </div>
 </body>
 </html>

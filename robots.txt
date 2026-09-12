@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soihihou05.github.io/portfolio/sitemap.xml

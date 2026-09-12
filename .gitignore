@@ -3,5 +3,5 @@ Thumbs.db
 *.log
 node_modules/
 assets/img/photo-original.jpeg
-./.claude
-./mes_cv
+./.claude/*
+./mes_cv/*
